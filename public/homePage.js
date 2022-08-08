@@ -1,3 +1,5 @@
+'use strict'
+
 let logoutButton = new LogoutButton();
 let ratesBoard = new RatesBoard();
 let moneyManager = new MoneyManager();
