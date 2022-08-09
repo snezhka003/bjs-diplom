@@ -5,7 +5,11 @@ let ratesBoard = new RatesBoard();
 let moneyManager = new MoneyManager();
 let favoritesWidget = new FavoritesWidget();
 
-let callback = method => response => {if(response.success) method(response.data)};
+let callback = method => response => {
+    if(response.success) {
+        method(response.data);
+    }
+};
 
 logoutButton.action = () => {
     ApiConnector.logout(response => {
