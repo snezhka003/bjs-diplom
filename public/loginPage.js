@@ -2,7 +2,7 @@
 
 let userForm = new UserForm();
 
-let callback = (methodApi, boxMessage) => data => {methodApi(data, response => {
+let func = (methodApi, boxMessage) => data => {methodApi(data, response => {
         if(response.success) {
             location.reload();
         } else {
@@ -11,9 +11,9 @@ let callback = (methodApi, boxMessage) => data => {methodApi(data, response => {
     });
 };
 
-userForm.loginFormCallback = callback(ApiConnector.login, (data) => userForm.setLoginErrorMessage(data));
+userForm.loginFormCallback = func(ApiConnector.login, (data) => userForm.setLoginErrorMessage(data));
 
-userForm.registerFormCallback = callback(ApiConnector.register, (data) => userForm.setLoginErrorMessage(data));
+userForm.registerFormCallback = func(ApiConnector.register, (data) => userForm.setLoginErrorMessage(data));
 
 // НИЖЕ ИЗНАЧАЛЬНЫЙ ВАРИАНТ, ЕЩЕ НЕ СОКРАЩЕННЫЙ (сохранила на всякий случай)
 
